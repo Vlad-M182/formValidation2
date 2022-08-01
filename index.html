@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="icon" href="img/form-icon.png" type="image/png" />
+		<title>Валідація форми</title>
+	</head>
+	<body>
+		<form class="booking-room" action="/" id="booking-room">
+			<h1 class="title1">Book number in the hotel</h1>
+			<fieldset class="fieldset">
+				<legend class="legend">Name</legend>
+				<div class="input-block">
+					<label for="firstName">First Name</label>
+					<input
+						data-req="true"
+						type="text"
+						name="firstName"
+						id="firstName"
+						autocomplete="off"
+					/>
+				</div>
+				<div class="input-block">
+					<label for="lastName">Last Name</label>
+					<input
+						data-req="true"
+						type="text"
+						name="lastName"
+						id="lastName"
+						autocomplete="off"
+					/>
+				</div>
+			</fieldset>
+			<fieldset class="fieldset">
+				<legend class="legend">E-mail</legend>
+				<div class="input-block">
+					<input
+						data-req="true"
+						type="email"
+						name="email"
+						id="email"
+						autocomplete="off"
+						placeholder="example@mail.com"
+					/>
+				</div>
+			</fieldset>
+			<fieldset class="fieldset">
+				<legend class="legend">Room type</legend>
+				<div class="input-block">
+					<select name="roomType" data-req="true">
+						<option value="standart">Standart (1 to 2 people)</option>
+						<option value="family">Family (3 to 5 people)</option>
+						<option value="big">Big (5 to 8 people)</option>
+						<option value="luxury">Luxury (8+ people)</option>
+					</select>
+				</div>
+			</fieldset>
+			<fieldset class="fieldset">
+				<legend class="legend">Number of visitors</legend>
+				<div class="input-block">
+					<input data-req="true" type="number" name="visitors" id="visitors" />
+				</div>
+			</fieldset>
+			<fieldset class="fieldset">
+				<legend class="legend">Arrival Date & Time</legend>
+				<div class="input-block arrival">
+					<input
+						data-req="true"
+						type="date"
+						name="arrivalDate"
+						id="arrivalDate"
+					/>
+					<input
+						data-req="true"
+						type="time"
+						name="arrivalTime"
+						id="arrivalTime"
+					/>
+					<select name="dayTime" data-req="true" disabled>
+						<option value="am">AM</option>
+						<option value="pm">PM</option>
+					</select>
+				</div>
+			</fieldset>
+			<fieldset class="fieldset">
+				<legend class="legend">Departure Date</legend>
+				<div class="input-block arrival">
+					<input
+						data-req="true"
+						type="date"
+						name="departureDate"
+						id="departureDate"
+					/>
+				</div>
+			</fieldset>
+			<fieldset class="fieldset">
+				<legend class="legend">Free pickup</legend>
+				<div class="input-block pickup">
+					<p>
+						<input type="radio" name="pickup" id="pickupYes" value="yes" />
+						<label for="pickupYes">Yes Please - Pick me up on arrival</label>
+					</p>
+
+					<p>
+						<input
+							type="radio"
+							name="pickup"
+							id="pickupNo"
+							value="no"
+							checked
+						/>
+						<label for="pickupNo">No Thanks - I'll make my own way there</label>
+					</p>
+				</div>
+			</fieldset>
+			<fieldset class="fieldset">
+				<legend class="legend">Special requests</legend>
+				<div class="input-block">
+					<textarea name="requests"></textarea>
+				</div>
+			</fieldset>
+
+			<fieldset class="fieldset">
+				<legend class="legend">Checkbox</legend>
+				<div class="input-block">
+					<input
+						data-req="true"
+						type="checkbox"
+						name="box"
+						id="box"
+						autocomplete="off"
+					/>
+					<label for="box">checkbox</label>
+				</div>
+			</fieldset>
+
+			<button class="submit-button" type="submit">Send</button>
+		</form>
+
+		<script src="js/script.js"></script>
+	</body>
+</html>

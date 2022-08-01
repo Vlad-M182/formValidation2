@@ -1,0 +1,204 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+label,
+input {
+	font-size: inherit;
+}
+
+body,
+html {
+	font-family: sans-serif;
+	font-size: 16px;
+	background-color: #666666;
+	color: #fff;
+}
+
+input {
+	background-color: transparent;
+	color: inherit;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	padding: 5px 7px;
+	display: block;
+	border-bottom: 3px solid #b6b6b6;
+	outline: none;
+	width: 100%;
+}
+
+input:hover {
+	border-bottom: 3px solid #e0e0e0;
+}
+
+input:focus {
+	border-bottom: 3px solid #5d96ff;
+}
+
+input::placeholder {
+	color: inherit;
+	opacity: 0.6;
+}
+
+input.error {
+	border-bottom: 3px solid #ff8181;
+}
+
+input.good {
+	border-bottom: 3px solid #81ff92;
+}
+
+select {
+	display: block;
+	width: 100%;
+	font-size: 1.1rem;
+	padding: 5px;
+	background-color: transparent;
+	color: inherit;
+	outline: none;
+	border-radius: 7px;
+	border: 1px solid #aaa;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3) inset;
+}
+
+@media (min-width: 480px) {
+	select {
+		max-width: 290px;
+	}
+}
+
+select:focus,
+select:hover {
+	border: 1px solid #cccccc;
+}
+
+option {
+	background-color: #999;
+}
+
+label {
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+	display: none;
+}
+input[type='number'] {
+	-moz-appearance: textfield;
+}
+
+.booking-room {
+	width: 80%;
+	margin: 0 auto 10px;
+}
+
+@media (max-width: 480px) {
+	.booking-room {
+		width: 100%;
+	}
+}
+
+@media (min-width: 1200px) {
+	.booking-room {
+		width: 50%;
+	}
+}
+
+.title1 {
+	text-align: center;
+	margin: 0.65rem 0px;
+}
+
+.input-block {
+	padding: 0 10px 10px;
+}
+
+.input-block textarea {
+	display: block;
+	width: 100%;
+	height: 200px;
+	resize: none;
+	border-radius: 7px;
+	outline: none;
+	padding: 10px;
+	font-size: 1.1rem;
+	color: inherit;
+	background-color: transparent;
+	border: 1px solid #aaa;
+}
+
+.input-block textarea:hover,
+.input-block textarea:focus {
+	border: 1px solid #cccccc;
+}
+
+.fieldset {
+	padding: 10px;
+	border: none;
+}
+
+.legend {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.arrival {
+	display: flex;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.arrival input,
+.arrival select {
+	width: auto;
+}
+
+.pickup input {
+	display: none;
+}
+
+.pickup p {
+	margin: 0px 0px 5px 0px;
+}
+
+.pickup input + label {
+	position: relative;
+	cursor: pointer;
+}
+
+.pickup input + label::before {
+	content: '';
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	border: 1px solid #ccc;
+	margin: 0px 10px 0px 0px;
+	vertical-align: baseline;
+	border-radius: 50%;
+}
+
+.pickup input:checked + label::before {
+	background-color: #eee;
+}
+
+.submit-button {
+	display: block;
+	margin: 0 auto;
+	padding: 7px 15px;
+	border-radius: 7px;
+	border: 1px solid #ccc;
+	font-size: 1.1rem;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.3) inset;
+	cursor: pointer;
+	transition: all 0.2s ease 0s;
+	background-color: #eee;
+}
+
+.submit-button:hover {
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.4) inset;
+}
