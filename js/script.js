@@ -57,8 +57,10 @@ function formValidation(formToValidate) {
 							break;
 						case 'number':
 							const roomType = elemToValidate.form.elements['roomType'];
-							const visitorsMin = +roomType.selectedOptions[0].dataset.min;
-							const visitorsMax = +roomType.selectedOptions[0].dataset.max;
+							const visitorsMin =
+								+roomType.options[roomType.selectedIndex].dataset.min;
+							const visitorsMax =
+								+roomType.options[roomType.selectedIndex].dataset.max;
 							const isCorrectVisitorsAmount = !Boolean(
 								+elemToValidate.value >= visitorsMin &&
 									+elemToValidate.value <= visitorsMax
