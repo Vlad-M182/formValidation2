@@ -1,7 +1,7 @@
 'use strict';
 
-function formValidation() {
-	const bookingForm = document.querySelector('.booking-room');
+// add data-req="true" attribute to elements which you want to validate
+function formValidation(formToValidate) {
 	const emailExp = new RegExp(/\S+@\S+\.\w+/, 'i');
 	let objectWithFormData = {};
 
@@ -35,12 +35,12 @@ function formValidation() {
 	}
 
 	// submitting form
-	bookingForm.addEventListener('submit', e => {
+	formToValidate.addEventListener('submit', e => {
 		e.preventDefault();
 
 		try {
 			// check form elements on validity
-			Array.from(bookingForm.elements).forEach(elemToValidate => {
+			Array.from(formToValidate.elements).forEach(elemToValidate => {
 				if (elemToValidate.dataset.req && !elemToValidate.disabled) {
 					switch (elemToValidate.type) {
 						case 'email':
@@ -80,12 +80,13 @@ function formValidation() {
 			});
 
 			// fill object with data from form
-			Array.from(bookingForm.elements).forEach(elem => {
+			Array.from(formToValidate.elements).forEach(elem => {
 				if (elem.name && !elem.disabled) {
 					Object.assign(objectWithFormData, objectToFillIn(elem));
 				}
 			});
 
+			// return objectWithFormData;
 			console.log(objectWithFormData);
 		} catch (error) {
 			alert(error);
@@ -93,4 +94,4 @@ function formValidation() {
 	});
 }
 
-formValidation();
+formValidation(document.querySelector('.booking-room'));
