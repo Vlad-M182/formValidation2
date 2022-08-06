@@ -6,13 +6,15 @@ function formValidation() {
 	let objectWithFormData = {};
 
 	// function return error if validation failed
-	function checkingValidation(bool, elem) {
+	function checkingValidation(
+		bool,
+		elem,
+		exp = `It seems that ${elem.name} field isn't filled correctly.`
+	) {
 		if (bool) {
 			elem.classList.add('error');
 			return () => {
-				throw new Error(
-					`It seems that ${elem.name} field isn't filled correctly.`
-				);
+				throw new Error(exp);
 			};
 		}
 		return () => {};
@@ -53,6 +55,21 @@ function formValidation() {
 								elemToValidate
 							)();
 							break;
+						case 'number':
+							const roomType = elemToValidate.form.elements['roomType'];
+							const visitorsMin = +roomType.selectedOptions[0].dataset.min;
+							const visitorsMax = +roomType.selectedOptions[0].dataset.max;
+							const isCorrectVisitorsAmount = !Boolean(
+								+elemToValidate.value >= visitorsMin &&
+									+elemToValidate.value <= visitorsMax
+							);
+
+							checkingValidation(
+								isCorrectVisitorsAmount,
+								elemToValidate,
+								`Amount of visitors should be from ${visitorsMin} to ${visitorsMax} inclusively.`
+							)();
+							break;
 						default:
 							checkingValidation(
 								Boolean(!elemToValidate.value),
@@ -68,11 +85,11 @@ function formValidation() {
 					Object.assign(objectWithFormData, objectToFillIn(elem));
 				}
 			});
+
+			console.log(objectWithFormData);
 		} catch (error) {
 			alert(error);
 		}
-
-		console.log(objectWithFormData);
 	});
 }
 

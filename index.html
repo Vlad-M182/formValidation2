@@ -51,10 +51,18 @@
 				<legend class="legend">Room type</legend>
 				<div class="input-block">
 					<select name="roomType" data-req="true">
-						<option value="standart">Standart (1 to 2 people)</option>
-						<option value="family">Family (3 to 5 people)</option>
-						<option value="big">Big (5 to 8 people)</option>
-						<option value="luxury">Luxury (8+ people)</option>
+						<option value="standart" data-min="1" data-max="2">
+							Standart (1 to 2 people)
+						</option>
+						<option value="family" data-min="3" data-max="5">
+							Family (3 to 5 people)
+						</option>
+						<option value="big" data-min="5" data-max="8">
+							Big (5 to 8 people)
+						</option>
+						<option value="luxury" data-min="8" data-max="15">
+							Luxury (8+ people)
+						</option>
 					</select>
 				</div>
 			</fieldset>
@@ -120,20 +128,6 @@
 				<legend class="legend">Special requests</legend>
 				<div class="input-block">
 					<textarea name="requests"></textarea>
-				</div>
-			</fieldset>
-
-			<fieldset class="fieldset">
-				<legend class="legend">Checkbox</legend>
-				<div class="input-block">
-					<input
-						data-req="true"
-						type="checkbox"
-						name="box"
-						id="box"
-						autocomplete="off"
-					/>
-					<label for="box">checkbox</label>
 				</div>
 			</fieldset>
 
